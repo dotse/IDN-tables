@@ -1,2 +1,4 @@
 # IDN-tables
-# se_Latin, se_Yiddish, nu_latin
+# se_Latin,
+  se_Yiddish,
+  nu_latin
