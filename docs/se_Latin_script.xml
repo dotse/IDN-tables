@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='utf-8'?>
+<lgr xmlns="urn:ietf:params:xml:ns:lgr-1.0">
+  <meta>
+    <version comment="Latin script table for .se">3</version>
+    <date>2020-10-02</date>
+    <unicode-version>6.3.0</unicode-version>
+    <language>und-Latn</language>
+    <scope type="domain">se</scope>
+    <validity-start>2019-09-24</validity-start>
+    <description type="text/plain"><![CDATA[
+
+TLD: SE
+Language Identifier: ISO 639-1 und
+Language Description: undefined (multiple)
+Script Identifier: ISO 15924 Latn
+Script Description: Latin
+Table Version: 3
+Table Date: 2020-10-02
+Normative Version: C
+Normative Date: 2020-10-02
+Registry: Stiftelsen för Internetinfrastruktur
+Contact: Registry Services 
+E-mail: registry@internetstiftelsen.se
+Address: Box 92073, SE-12007 Stockholm, Sweden
+Telephone: +46 8 452 3500 
+Fax: +46 8 452 3502
+Website: https://www.internetstiftelsen.se/
+
+This document lists all characters from Latin script that could be used for registration
+of .se domain names. This document is not normative. The normative source is found in
+the IDN table for .nu and the latest version is always found at
+https://dotse.github.io/IDN-tables/IDN_table_se.pdf.
+
+Note that the the table in the reference also contains Hebrew code points, which are
+not included in this table but in a separate Yiddish language table for .se at IANA. 
+
+A domain name under .se must either match this table or the .se Yiddish language table.
+
+]]></description>
+  </meta>
+  <data>
+    <char cp="002D" not-when="hyphen-minus-disallowed" />
+    <range first-cp="0030" last-cp="0039"/>
+    <range first-cp="0061" last-cp="007A"/>
+    <range first-cp="00E0" last-cp="00E2"/>
+    <range first-cp="00E4" last-cp="00F6"/>
+    <range first-cp="00F8" last-cp="00FA"/>
+    <range first-cp="00FC" last-cp="00FE"/>
+    <char cp="0107"/>
+    <char cp="010D"/>
+    <char cp="0111"/>
+    <char cp="011B"/>
+    <char cp="0142"/>
+    <char cp="0144"/>
+    <char cp="014B"/>
+    <char cp="0159"/>
+    <char cp="015B"/>
+    <char cp="0161"/>
+    <char cp="0163"/>
+    <char cp="0167"/>
+    <char cp="017A"/>
+    <char cp="017E"/>
+    <char cp="01CE"/>
+    <char cp="01D0"/>
+    <char cp="01D2"/>
+    <char cp="01D4"/>
+    <char cp="01E5"/>
+    <char cp="01E7"/>
+    <char cp="01E9"/>
+    <char cp="01EF"/>
+    <char cp="0259"/>
+    <char cp="0292"/>
+  </data>
+  <rules>
+    <rule name="hyphen-minus-disallowed" comment="RFC5891 restrictions on placement of U+002D">
+      <choice>
+        <rule comment="no leading hyphen">
+          <look-behind>
+            <start/>
+          </look-behind>
+          <anchor/>
+        </rule>
+        <rule comment="no trailing hyphen">
+          <anchor/>
+          <look-ahead>
+            <end/>
+          </look-ahead>
+        </rule>
+        <rule comment="no consecutive hyphens in third and fourth">
+          <look-behind>
+            <start/>
+            <any/>
+            <any/>
+            <char cp="002D" comment="hyphen-minus"/>
+          </look-behind>
+          <anchor/>
+        </rule>
+      </choice>
+    </rule>
+    <action disp="valid" comment="catch all"/>
+  </rules>
+</lgr>

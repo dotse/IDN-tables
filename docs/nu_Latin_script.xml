@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<lgr xmlns="urn:ietf:params:xml:ns:lgr-1.0">
+  <meta>
+    <version comment="Latin script table for .nu">2</version>
+    <date>2020-10-02</date>
+    <unicode-version>6.3.0</unicode-version>
+    <language>und-Latn</language>
+    <scope type="domain">nu</scope>
+    <validity-start>2019-09-24</validity-start>
+    <description type="text/plain"><![CDATA[
+
+TLD: NU
+Language Identifier: ISO 639-1 und
+Language Description: undefined (multiple)
+Script Identifier: ISO 15924 Latn
+Script Description: Latin
+Table Version: 2
+Table Date: 2020-10-02
+Normative Version: C
+Normative Date: 2020-10-02
+Registry: Stiftelsen för Internetinfrastruktur
+Contact: Registry Services 
+E-mail: registry@internetstiftelsen.se
+Address: Box 92073, SE-12007 Stockholm, Sweden
+Telephone: +46 8 452 3500 
+Fax: +46 8 452 3502
+Website: https://www.internetstiftelsen.se/
+
+This document lists all characters from Latin script that could be used for registration
+of .nu domain names. This document is not normative. The normative source is found in
+the IDN table for .nu and the latest version is always found at
+https://dotse.github.io/IDN-tables/IDN_table_nu.pdf.
+
+]]></description>
+  </meta>
+  <data>
+    <char cp="002D" not-when="hyphen-minus-disallowed" />
+    <range first-cp="0030" last-cp="0039"/>
+    <range first-cp="0061" last-cp="007A"/>
+    <range first-cp="00E0" last-cp="00F6"/>
+    <range first-cp="00F8" last-cp="00FF"/>
+    <char cp="0101"/>
+    <char cp="0113"/>
+    <char cp="012B"/> 
+    <char cp="014B"/>
+    <char cp="014D"/>
+    <char cp="016B"/>
+  </data>
+  <rules>
+    <rule name="hyphen-minus-disallowed" comment="RFC5891 restrictions on placement of U+002D">
+      <choice>
+        <rule comment="no leading hyphen">
+          <look-behind>
+            <start/>
+          </look-behind>
+          <anchor/>
+        </rule>
+        <rule comment="no trailing hyphen">
+          <anchor/>
+          <look-ahead>
+            <end/>
+          </look-ahead>
+        </rule>
+        <rule comment="no consecutive hyphens in third and fourth">
+          <look-behind>
+            <start/>
+            <any/>
+            <any/>
+            <char cp="002D" comment="hyphen-minus"/>
+          </look-behind>
+          <anchor/>
+        </rule>
+      </choice>
+    </rule>
+    <action disp="valid" comment="catch all"/>
+  </rules>
+</lgr>

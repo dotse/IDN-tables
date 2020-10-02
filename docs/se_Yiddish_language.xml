@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='utf-8'?>
+<lgr xmlns="urn:ietf:params:xml:ns:lgr-1.0">
+  <meta>
+    <version comment="Yiddish language table for .se">3</version>
+    <date>2020-10-02</date>
+    <unicode-version>6.3.0</unicode-version>
+    <language>yi-Hebr</language>
+    <scope type="domain">se</scope>
+    <validity-start>2019-09-24</validity-start>
+    <description type="text/plain"><![CDATA[
+
+TLD: SE
+Language Identifier: ISO 639-1 yi
+Language Description: Yiddish
+Script Identifier: ISO 15924 Hebr
+Script Description: Hebrew
+Table Version: 3
+Table Date: 2020-10-02
+Normative Version: C
+Normative Date: 2020-10-02
+Registry: Stiftelsen för Internetinfrastruktur
+Contact: Registry Services 
+E-mail: registry@internetstiftelsen.se
+Address: Box 92073, SE-12007 Stockholm, Sweden
+Telephone: +46 8 452 3500 
+Fax: +46 8 452 3502
+Website: https://www.internetstiftelsen.se/
+
+This document lists all characters from Latin script that could be used for registration
+of .se domain names. This document is not normative. The normative source is found in
+the IDN table for .nu and the latest version is always found at
+https://dotse.github.io/IDN-tables/IDN_table_se.pdf.
+
+Note that the the table in the reference also contains Latin code points, which are
+not included in this table but in a separate Latin script table for .se at IANA.
+
+The European digits are permitted in this table, but neither in initial nor final
+position. The domain name must contain at least one code point from the Hebrew script.
+For domain names of just digits and hyphen, use the Latin script table.
+
+A domain name under .se must either match this table or the .se Latin script table. 
+
+]]></description>
+  </meta>
+  <data>
+    <char cp="002D" not-when="hyphen-minus-disallowed" />
+    <range first-cp="0030" last-cp="0039" not-when="digit-disallowed"/>
+    <char cp="05D0"/>
+    <char cp="05D0 05B7"/>
+    <char cp="05D0 05B8"/>
+    <char cp="05D1"/>
+    <char cp="05D1 05BF"/>
+    <char cp="05D2"/>
+    <char cp="05D3"/>
+    <char cp="05D4"/>
+    <char cp="05D5"/>
+    <char cp="05D5 05BC"/>
+    <char cp="05D6"/>
+    <char cp="05D7"/>
+    <char cp="05D8"/>
+    <char cp="05D9"/>
+    <char cp="05D9 05B4"/>
+    <char cp="05DA"/>
+    <char cp="05DB"/>
+    <char cp="05DB 05BC"/>
+    <char cp="05DC"/>
+    <char cp="05DD"/>
+    <char cp="05DE"/>
+    <char cp="05DF"/>
+    <char cp="05E0"/>
+    <char cp="05E1"/>
+    <char cp="05E2"/>
+    <char cp="05E3"/>
+    <char cp="05E4"/>
+    <char cp="05E4 05BC"/>
+    <char cp="05E4 05BF"/>
+    <char cp="05E5"/>
+    <char cp="05E6"/>
+    <char cp="05E7"/>
+    <char cp="05E8"/>
+    <char cp="05E9"/>
+    <char cp="05E9 05C2"/>
+    <char cp="05EA"/>
+    <char cp="05EA 05BC"/>
+    <char cp="05F2 05B7"/>
+  </data>
+  <rules>
+    <rule name="hyphen-minus-disallowed" comment="Disallowed in some positions">
+      <choice>
+        <rule comment="no leading hyphen">
+          <look-behind>
+            <start/>
+          </look-behind>
+          <anchor/>
+        </rule>
+        <rule comment="no trailing hyphen">
+          <anchor/>
+          <look-ahead>
+            <end/>
+          </look-ahead>
+        </rule>
+        <rule comment="no consecutive hyphens in third and fourth">
+          <look-behind>
+            <start/>
+            <any/>
+            <any/>
+            <char cp="002D" comment="hyphen-minus"/>
+          </look-behind>
+          <anchor/>
+        </rule>
+      </choice>
+    </rule>
+    <rule name="digit-disallowed" comment="Disallowed in initial and final position">
+      <choice>
+        <rule comment="no leading digit">
+          <look-behind>
+            <start/>
+          </look-behind>
+          <anchor/>
+        </rule>
+        <rule comment="no final digit">
+          <anchor/>
+          <look-ahead>
+            <end/>
+          </look-ahead>
+        </rule>
+      </choice>
+    </rule>
+    <action disp="valid" comment="catch all"/>
+  </rules>
+</lgr>
