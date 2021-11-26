@@ -4,7 +4,7 @@
 * [IDN table files](#idn-table-files)
 * [Primary source (DOCX) tables](#primary-source-docx-tables)
   * [Update the primary source tables](#update-the-primary-source-tables)
-* [PDF table files](#pdf-table-files)
+* [PDF table files]
   * [Create the PDF table files](#create-the-pdf-table-files)
 * [XML table files](#xml-table-files)
   * [Available XML file](#available-xml-file)
@@ -59,7 +59,8 @@ be started by updating these primary source files.
    2. If the revision says "C" then the next revision is "D". If the
       revison is "Z" then the next revision is "AA".
    3. The date should be the date when the revsion is completed.
-3. When the update is completed, go to the PDF file section.
+3. When the update is completed, go to the [PDF file section][PDF table files]
+   in this document.
 4. If there is any change in the code point repertoire or the
    contextual rules (restrictions) then the XML files must also be
    updated.
@@ -89,17 +90,15 @@ You should be familiar with the LGR specification ([RFC 7940])
 when you update the XML files.
 
 The XML (LGR) files could be tested and verified with the
-following tools (actually the same tool, but two different
-installations):
-
-* [IIS IDN-web] -- only available from Internetstiftelsen network
+following tool:
 * [ICANN LGR Tool]
 
 ### Available XML file
 
-For .nu there is one XML file, [nu_Latin_script.xml] in the [docs] 
-folder. For .se there are two XML files (also in the [docs] folder):
+For .nu there is one XML file in the [docs] folder:
+* [nu_Latin_script.xml]
 
+For .se there are two XML files in the [docs] folder:
 * [se_Latin_script.xml] for the Latin script part of the .se IDN 
   table
 * [se_Yiddish_language.xml] for the Yiddish language part of the
@@ -147,7 +146,7 @@ name is then expected to include the version integer.
 [ICANN LGR Tool]:             https://lgrtool.icann.org/
 [IDN_table_nu.docx]:          IDN_table_nu.docx
 [IDN_table_se.docx]:          IDN_table_se.docx
-[IIS IDN-web]:                http://idnweb.prod.pdt.iis.se/
+[PDF table files]:            #pdf-table-files
 [RFC 7940]:                   https://tools.ietf.org/html/rfc7940
 [docs]:                       docs
 [lgr.rng]:                    schema/lgr.rng
@@ -155,3 +154,4 @@ name is then expected to include the version integer.
 [permalink]:                  https://en.wikipedia.org/wiki/Permalink
 [se_Latin_script.xml]:        docs/se_Latin_script.xml
 [se_Yiddish_language.xml]:    docs/se_Yiddish_language.xml
+
